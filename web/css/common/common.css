@@ -1,0 +1,36 @@
+@charset "utf-8";
+*{margin: 0;padding: 0;border: 0;outline: none;text-decoration: none;}
+
+.bold{font-weight: bold;}
+
+/*body*/
+body{font-size: 14px;}
+p{margin-bottom: 0;}
+/*顶部登陆状态*/
+.log-sta{}
+.log-box{width: 1200px;margin: 0 auto;}
+/*顶部导航条*/
+.nav{height: 45px;background-color: #245580;}
+.nav-con{width: 1200px;margin: 0 auto;}
+.nav-con a{display: block;float: left;line-height: 45px;color: #ff2266;margin-right: 15px;padding: 0 10px;}
+.nav-con a:hover{background-color: #333;}
+/*中间内容*/
+.content{overflow: hidden}
+.content-box{width: 1200px;margin: 0 auto;overflow: hidden;padding: 10px 0;}
+/*用户中心左侧二级导航*/
+.sec-nav{width: 150px;float: left;}
+.sec-index{display: block;background-color: #88ee88;color: #222;padding: 0 10px;line-height: 40px;border-bottom: 1px solid #aaffaa;}
+.sec-index:hover{background-color: #22bb22;color: #fff;}
+.active-index{background-color: #22bb22;color: #fff;}
+.one-sec{}
+.sec-title{line-height: 35px;padding: 0 10px;background-color: #88ee88;color: #222;}
+.sec-link{display: block;line-height: 30px;padding: 0 10px;background-color: #aaffaa;color: #ff2266;}
+.sec-link:hover{background-color: #22bb22;color: #fff;}
+.active-link{background-color: #22bb22;color: #fff;}
+
+
+/*用户中心右侧内容*/
+.content-r{width: 1050px;float: left;padding-left: 10px;}
+/*页脚*/
+.footer{}
+.foot-box{width: 1200px;margin: 0 auto;}

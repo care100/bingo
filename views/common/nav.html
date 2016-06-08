@@ -1,0 +1,22 @@
+<div class="log-sta">
+    <div    class="log-box">
+        {#if $loginOn eq true#}
+        <span>您好：
+            <a href="{#if $type eq 1#}/usercenter/factory{#else#}/usercenter/seller{#/if#}">{#$username#}</a>
+        </span>
+        <a href="/account/login/logout">退出</a>
+        {#else#}
+        <a href="/account/login">登录</a>
+        <a href="/account/register">注册</a>
+        {#/if#}
+    </div>
+</div>
+<div class="nav">
+    <div class="nav-con">
+        <a href="/" class="nav-link">首页</a>
+        <a href="/core/factory" class="nav-link">认证厂家</a>
+        <!--<a href="/" class="nav-link">设备</a>-->
+        <!--<a href="/" class="nav-link">原材料</a>-->
+        <!--<a href="/" class="nav-link">加工厂</a>-->
+    </div>
+</div>

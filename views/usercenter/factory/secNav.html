@@ -1,0 +1,15 @@
+<!--左侧导航-->
+<div class="sec-nav">
+    <a href="/usercenter/factory" class="sec-index bold {#if $page eq factoryIndex#}active-index{#/if#}">经营总览</a>
+    <div class="one-sec">
+        <p class="sec-title bold">产品管理</p>
+        <a href="/usercenter/factory/product" class="sec-link {#if $page eq factoryProduct#}active-link{#/if#}">我的产品</a>
+        <a href="/usercenter/factory/publish" class="sec-link {#if $page eq factoryPublish#}active-link{#/if#}">发布新品</a>
+    </div>
+    <div class="one-sec">
+        <p class="sec-title bold">账号管理</p>
+        <a href="/usercenter/factory/information" class="sec-link {#if $page eq factoryInformation#}active-link{#/if#}">修改资料</a>
+        <a href="/usercenter/factory/password" class="sec-link {#if $page eq factoryPassword#}active-link{#/if#}">修改密码</a>
+    </div>
+
+</div>

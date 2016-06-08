@@ -1,0 +1,31 @@
+{#include file='@app/views/common/header.html'#}
+<meta name="keywords" content="晶钢门">
+<meta name="description" content="晶钢门">
+<meta name="csrf-token" content="{#$_csrf#}"/>
+<title>产品详情-门市网</title>
+</head>
+<body>
+{#include file='@app/views/common/nav.html'#}
+
+<div class="content">
+    <div class="content-box">
+        <div>
+            <div>
+                <div>
+                    <span>{#$product->id#}</span>;
+                    <span>{#$product->user_id#}</span>;
+                    <span>{#$product->price#}</span>;
+                    <span>{#$product->handle#}</span>
+                </div>
+                <img src="http://pic.bingo.com/{#$product->id#}/20151201_180x180.jpg">
+            </div>
+        </div>
+    </div>
+</div>
+
+{#include file='@app/views/common/footer.html'#}
+
+{#include file='@app/views/common/script.html'#}
+</body>
+</html>
+

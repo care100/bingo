@@ -1,0 +1,29 @@
+{#include file='@app/views/common/header.html'#}
+    <meta name="keywords" content="晶钢门">
+    <meta name="description" content="晶钢门">
+    <title>经营总览</title>
+</head>
+<body>
+{#include file='@app/views/common/nav.html'#}
+
+<div class="content">
+    <div class="content-box">
+        <!--左侧二级导航条-->
+        {#include file='@app/views/usercenter/factory/secNav.html'#}
+        <!--右侧内容模块-->
+        <div class="content-r">
+            <div class="">
+                <p>在售产品：2款</p>
+                <p>本周接单：13笔，200平米</p>
+                <p>本周发货：16笔，250平米</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{#include file='@app/views/common/footer.html'#}
+
+{#include file='@app/views/common/script.html'#}
+</body>
+</html>

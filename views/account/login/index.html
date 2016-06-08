@@ -1,0 +1,108 @@
+{#extends file="@app/views/common/base.html"#}
+
+{#block name = head#}
+<meta name="keywords" content="晶钢门">
+<meta name="description" content="晶钢门">
+<meta name="csrf-token" content="{#$_csrf#}"/>
+<title>欢迎登陆-缤果网</title>
+{#include file='@app/views/common/head.html'#}
+
+<style>
+    #log-form{width: 900px;margin: 0 auto;overflow: hidden;}
+    .form-group{overflow: hidden;height: 60px;}
+    .form-group div{overflow: hidden;}
+
+</style>
+
+{#/block#}
+
+{#block name = nav#}
+{#include file='@app/views/common/nav.html'#}
+{#/block#}
+
+{#block name = content#}
+<div>
+    <a href="/account/register">注册</a>
+    <form action="/account/login/index" method="post" id="log-form">
+        <div>{#$login_status#}</div>
+        <input name="_csrf" type="hidden" id="_csrf" value="{#$_csrf#}">
+        <div class="form-group col-md-6 col-md-offset-3">
+            <label for="username" class="col-md-3 text-right">用户名：</label>
+            <div class="col-md-9">
+                <input type="text" name="username" id="username" class="form-control">
+            </div>
+        </div>
+        <div class="form-group col-md-6 col-md-offset-3">
+            <label for="password" class="col-md-3 text-right">密码：</label>
+            <div class="col-md-9">
+                <input type="password" name="password" id="password" class="form-control">
+            </div>
+        </div>
+        <input type="submit" value="登陆" class="btn btn-primary col-md-2 col-md-offset-5">
+    </form>
+</div>
+{#/block#}
+
+{#block name = footer#}
+{#include file='@app/views/common/footer.html'#}
+{#/block#}
+
+{#block name = script#}
+{#include file='@app/views/common/script.html'#}
+<script src="/js/lib/jquery/jquery.validate.min.js"></script>
+<script>
+
+    $(function() {
+        if (!window.WebSocket) {
+            console.log('no socket api');
+        } else {
+            console.log('has socket api');
+        }
+
+        var msg = new WebSocket('ws://www.bingo.com/account/login');
+        msg.onmessage = function (e) {
+            console.log(e.data);
+        }
+        msg.onopen = function (e) {
+            console.log('link ok');
+        }
+
+        msg.onerror = function (e) {
+            console.log(e);
+            console.log('link error');
+        }
+
+        msg.onclose = function (e) {
+            console.log('close link');
+        }
+
+
+
+
+
+
+        //设置前端表单验证相关参数
+        var validate_rule = {
+            rules:{
+                username:{
+                    required:true
+                },
+                password:{
+                    required:true
+                }
+            },
+            messages:{
+                username:{
+                    required:"请输入用户名"
+                },
+                password:{
+                    required:"请输入密码"
+                }
+            }
+        };
+
+        //开启表单前端验证
+        $('#log-form').validate(validate_rule);
+    });
+</script>
+{#/block#}
